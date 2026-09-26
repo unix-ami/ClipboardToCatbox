@@ -40,7 +40,7 @@ def upload(icon: icon, _):
 
     inst = uploader.CatboxUploader('./temp_image.png')
     link = inst.execute()
-
+    print(f"\n{link}\n", flush=True)
     pyperclip.copy(link)
 
     remove('./temp_image.png')
