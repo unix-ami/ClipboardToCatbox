@@ -3,3 +3,4 @@ pyupload
 pystray
 pillow
 pyperclip
+audioop-lts
