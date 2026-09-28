@@ -4,7 +4,7 @@ Simple script for uploading image from clipboard to [Catbox](https://catbox.moe)
 ## Compatibility
 | Windows | Linux | macOS |
 | :---: | :---: | :---: |
-| ✔ | ❌ | ❔ |
+| ✔ | ❔ | ✔ |
 
 ## Installation
 1. `git clone https://github.com/JustLian/ClipboardToCatbox`
@@ -18,3 +18,21 @@ To run script on startup put shortcut to `Startup` folder:
 1. Win + R
 2. `shell:startup`
 3. Create `run_in_background.vbs` file shortcut in opened folder
+
+
+## How to run script by clicking an icon (*Mac only*)
+Execute `RunCatbox.command` file.
+
+To create a clickable file that runs `run_catbox.zsh`:
+1. Open Terminal 
+2. Run the following code snippet 
+```
+cat > run_catbox.command <<'EOF'
+#!/bin/zsh
+cd "$(dirname "$0")"
+exec ./run_catbox.zsh
+EOF
+chmod +x run_catbox.zsh run_catbox.command
+ln -sf "$(pwd)/run_catbox.command" "$HOME/Desktop/RunCatbox.command"
+open "$HOME/Desktop"
+```
